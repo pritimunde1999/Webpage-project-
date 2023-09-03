@@ -1,38 +1,48 @@
 const api_key = "HgLRb9Mzo88KWu2fAm4zUkQhKJLNJ0GUqNzkAn99";
 const searchBtn = document.getElementById("search");
-const d = new Date();
-const currDate = d.toISOString().substring(0,10);
 const imageContainer = document.getElementById("current-image-container");
 const heading = document.getElementById("heading");
 const list = document.getElementById("list");
-fetchURL(currDate);
 let searches =[];
+
+
+getCurrentImageOfTheDay();
 
 if(localStorage.getItem("Searches"))
 {
     searches = JSON.parse(localStorage.getItem("Searches"));
-    addInList();
+    addSearchToHistory();
 }
 
 
-searchBtn.addEventListener("click",(e)=>{
-     e.preventDefault();
-     const date = document.getElementById("search-input").value;
-      
-     const data={
+function getCurrentImageOfTheDay(){
+    const d = new Date();
+    const currDate = d.toISOString().substring(0,10);
+    fetchURL(currDate);
+}
+
+function getImageOfTheDay(date){
+    const data={
         date: date,
      };
 
      searches.push(data);
      localStorage.setItem("Searches",JSON.stringify(searches));
 
-     addInList();
+     addSearchToHistory();
 
      fetchURL(date);
+}
+
+
+searchBtn.addEventListener("click",(e)=>{
+     e.preventDefault();
+     const date = document.getElementById("search-input").value;
+     getImageOfTheDay(date);
 });
 
 
-function addInList(){
+function addSearchToHistory(){
      list.innerHTML ='';
      const searchArray = JSON.parse(localStorage.getItem("Searches"));
 
