@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+    font-family: 'Inter', sans-serif;
+}
+
+h1,h3{
+    margin-top: 30px;
+    text-align: center;
+}
+
+#search-form{
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#search-input{
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid black;
+}
+
+button{
+    padding: 10px;
+    border-radius: 2px;
+
+}
+
+#heading{
+    margin-top: 60px;
+}
+
+#current-image-container{
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px ;
+    width:700px;
+    border : 1px solid #ebebeb;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px gray;
+    
+}
+
+#current-image-container h2{
+    text-align: center;
+}
+
+#search-history{
+    margin: auto;
+    margin-top: 40px;
+    width: fit-content;
+    padding: 20px;
+}
+
+#search-history ul {
+    padding: 10px;
+    list-style: none;
+    text-align: center;
+}
+
+#search-history ul li{
+   padding: 10px;
+}
